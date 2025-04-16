@@ -12,6 +12,9 @@ import ProductList from './pages/ProductList.jsx'
 import Error from './pages/Error.jsx'
 import ProductError from './pages/ProductError.jsx'
 
+// Import function loaders from ProductList
+import { loaders } from './pages/ProductList.jsx';
+
 const routes = createBrowserRouter([
   {
     path: '/', // Everything that starts with /
@@ -34,6 +37,7 @@ const routes = createBrowserRouter([
       {
         path:'/products',
         element:<ProductList/>,
+        loader:loaders  // 2) Before the page is loaded, the function loaders will be executed   
       },
       {
         path:'/products/:productId', // :productId is a dynamic route that we give name
