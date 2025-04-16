@@ -14,6 +14,7 @@ import ProductError from './pages/ProductError.jsx'
 
 // Import function loaders from ProductList
 import { loaders } from './pages/ProductList.jsx';
+import CreateProduct, { createProduct } from './pages/CreateProduct.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -44,6 +45,11 @@ const routes = createBrowserRouter([
         element:<Product/>,
         loader:dataLoader, // 2)
         errorElement:<ProductError/> // For product, the error will be caught here
+      },
+      {
+        path:'/create-product',
+        element:<CreateProduct/>,
+        action:createProduct
       }
       // TODO 404 page
     ]
