@@ -4,29 +4,37 @@ import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
-import Home from './components/Home.jsx'
-import About from './components/About.jsx'
-import Contact from './components/Contact.jsx'
+import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import Contact from './pages/Contact.jsx'
 
 const routes = createBrowserRouter([
-  // Defining the route and which components to render
   {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/about',
-    element:<About/>
-  },
-  {
-    path: '/contact',
-    element:<Contact/>
+    path: '/', // Everything that starts with /
+    element: <App />, // Will be rendered based on layout in App component
+    children: [
+      // Defining the route and which components to render
+      {
+        path: '',
+        element: <Home />,
+      },
+      {
+        path: '/about',
+        element: <About />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
+      }
+      // TODO 404 page
+    ]
   }
+
 ])
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={routes}/>
+    <RouterProvider router={routes} />
   </StrictMode>,
 )
