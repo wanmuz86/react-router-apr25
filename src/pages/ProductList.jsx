@@ -31,7 +31,7 @@ const ProductList = () => {
       {
         results.map(val=> 
         
-        <div style={{border:'1px solid black', padding:'16px', margin:'8px'}}>
+        <div style={{border:'1px solid black', padding:'16px', margin:'8px'}} key={val.id}>
           <img src={val.thumbnail} alt={val.title}/>
           <h3>{val.title}</h3>
           <p>{val.price} - {val.category}</p>
