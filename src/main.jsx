@@ -7,6 +7,7 @@ import { RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
+import Product from './pages/Product.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
+      },
+      {
+        path:'/products/:productId', // :productId is a dynamic route that we give name
+        element:<Product/>
       }
       // TODO 404 page
     ]
