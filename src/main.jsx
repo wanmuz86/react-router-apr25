@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Product from './pages/Product.jsx'
+import ProductList from './pages/ProductList.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const routes = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
+      },
+      {
+        path:'/products',
+        element:<ProductList/>,
       },
       {
         path:'/products/:productId', // :productId is a dynamic route that we give name

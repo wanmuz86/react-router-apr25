@@ -13,6 +13,7 @@ const Header = () => {
                 <li><Link to='/about'>About</Link></li>
                 {/* to simulate network request a href SSR vs SPA (react router) */}
                 {/* <li><a href='/contact'>Contact</a></li> */}
+                <li><Link to="/products?category=jewelery&page=1">Jewelery category</Link></li>
                 <li><Link to='/contact'>Contact</Link></li>
             </ul>
         </nav>
