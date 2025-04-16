@@ -7,7 +7,7 @@ import { RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
-import Product from './pages/Product.jsx'
+import Product, { dataLoader } from './pages/Product.jsx'
 import ProductList from './pages/ProductList.jsx'
 import Error from './pages/Error.jsx'
 import ProductError from './pages/ProductError.jsx'
@@ -42,6 +42,7 @@ const routes = createBrowserRouter([
       {
         path:'/products/:productId', // :productId is a dynamic route that we give name
         element:<Product/>,
+        loader:dataLoader, // 2)
         errorElement:<ProductError/> // For product, the error will be caught here
       }
       // TODO 404 page
